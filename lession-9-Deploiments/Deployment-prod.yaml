@@ -1,0 +1,26 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment-autoscaling
+  labels:
+    app  : my-k8s-appliation
+    env  : prod
+    owner: ilia
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      project: laravel
+  template:
+    metadata:
+      labels:
+        project: laravel
+    spec:
+      containers:
+         - name: mariadb
+           image: bitnami/mariadb:10.2
+         - name: myapp
+           tty: true
+           image: bitnami/laravel:8
+           ports:
+             - containerPort: 3000
