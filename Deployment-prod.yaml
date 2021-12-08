@@ -1,7 +1,7 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: my-web-deployment-autoscaling
+  name: my-web-deployment
   labels:
     app  : my-k8s-appliation
     env  : prod
@@ -19,8 +19,22 @@ spec:
       containers:
          - name: mariadb
            image: bitnami/mariadb:10.2
+           env:
+           - name: DB_DATABASE
+             value: my_database
+           - name: DB_USERNAME
+             value: my_user
+           - name: DB_PASSWORD
+             value: "my_password"
          - name: myapp
            tty: true
            image: bitnami/laravel:8
+           env:
+           - name: DB_DATABASE
+             value: my_database
+           - name: DB_USERNAME
+             value: my_user
+           - name: DB_PASSWORD
+             value: "my_password"
            ports:
              - containerPort: 3000
