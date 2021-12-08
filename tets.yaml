@@ -57,6 +57,12 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: password
+        - name: MARIADB_USER
+          value: my_user
+        - name: MARIADB_DATABASE
+          value: my_database
+        - name: MARIADB_PASSWORD
+          value: my_password
         ports:
         - containerPort: 3306
           name: mysql
