@@ -21,3 +21,19 @@ spec:
         image: adv4000/k8sphp:version1
         ports:
           containerPort: 80
+        - name: MARIADB_USER
+          value: my_user
+        - name: MARIADB_DATABASE
+          value: my_database
+        - name: MARIADB_PASSWORD
+          value: my_password
+        - name: ALLOW_EMPTY_PASSWORD
+          value: yes
+        - name: MYSQL_ALLOW_EMPTY_PASSWORD
+          value: yes
+                  - name: MYSQL_USER
+                    value: my_user
+                  - name: MYSQL_PASSWORD
+                    value: my_password
+                  - name: MYSQL_DATABASE
+                    value: my_database
