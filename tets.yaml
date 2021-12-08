@@ -56,7 +56,7 @@ spec:
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: password
+          value: password1
         - name: MARIADB_USER
           value: my_user
         - name: MARIADB_DATABASE
