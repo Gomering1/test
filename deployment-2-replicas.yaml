@@ -29,3 +29,11 @@ spec:
           value: my_password
         - name: ALLOW_EMPTY_PASSWORD
           value: yes
+        - name: MYSQL_ALLOW_EMPTY_PASSWORD
+          value: yes
+                  - name: MYSQL_USER
+                    value: my_user
+                  - name: MYSQL_PASSWORD
+                    value: my_password
+                  - name: MYSQL_DATABASE
+                    value: my_database
